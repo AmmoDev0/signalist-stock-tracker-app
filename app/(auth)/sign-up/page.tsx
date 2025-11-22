@@ -18,7 +18,6 @@ const SignUpPage = () => {
         defaultValues: {
             fullName: '',
             email: '',
-            phoneNumber: '',
             password: '',
             country: 'AU',
             investmentGoals: 'Growth',
@@ -56,24 +55,6 @@ const SignUpPage = () => {
                     register={register}
                     error={errors.email}
                     validation={{ required: 'Email is required', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Email address is required' }}
-                />
-                <InputField
-                    name="phoneNumber"
-                    label="Phone Number"
-                    placeholder="+1 234 567 890"
-                    register={register}
-                    error={errors.phoneNumber}
-                    validation={{
-                        required: 'Phone number is required',
-                        minLength: {
-                            value: 5,
-                            message: 'Phone number is too short'
-                        },
-                        pattern: {
-                            value: /^\+?[0-9\s\-]{5,20}$/,
-                            message: 'Enter a valid phone number'
-                        }
-                    }}
                 />
                 <CountrySelectField
                     name="country"
